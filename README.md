@@ -12,7 +12,10 @@ Using an Android emulator, this bot will continually search for a matching note 
 
 * Windows
 * LDPlayer (or other Android VM)
+* Tap lanes must be assigned to A, S, D keys*
 * Template images matching VM window size*
+
+*Beatstar has 3 lanes for notes, left, center, right. Your VM must be configured to have the A, S, D keys correspond to these tap lanes.
 
 *The provided bar.png and beatstar_text.png are sized to the default LDPlayer window size. If your window size is different, you may have to update the images using screenshots of the game from your VM.
 
