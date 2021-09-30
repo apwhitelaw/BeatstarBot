@@ -28,12 +28,29 @@ Using an Android emulator, this bot will continually search for a matching note 
 
 *We could grab the entire VM window, but the smaller the focus region, the faster it can process pattern matching. Therefore it would make the most sense to choose only the hit region as the focus region. This also makes the most sense because the bot does not check if the note is located in the hit region.
 
+### Todo List
+
+* Improve beatstar note match speed
+* Only press 2 keys when vertically aligned
+* Implement hold notes
+
+Reference source code for details.
+
 ## Version History
 
+* 0.1.1
+    * Minor fixes
+    * Added TODO items
+    * Expanded README.md
 * 0.1
     * Initial Release
+    * Hits single, double notes
+    * Hits beatstar note (late)
+    * Hits hold notes, does not hold
 
 ## Acknowledgments
 
 Thanks to
-* ClarityCoders [Github](https://github.com/ClarityCoders) [YouTube](https://www.youtube.com/channel/UC9Q4rw4dkey9lhK5FnYuigg)
+* ClarityCoders 
+  * [Github](https://github.com/ClarityCoders) 
+  * [YouTube](https://www.youtube.com/channel/UC9Q4rw4dkey9lhK5FnYuigg)
