@@ -1,6 +1,8 @@
 # BeatstarBot
 
-Bot for Android game Beatstar using OpenCV pattern matching.
+Bot for Android game Beatstar using OpenCV pattern matching. 
+
+[Click here to see it in action.](https://www.youtube.com/watch?v=5dhJkvJWYi0)
 
 ## Description
 
