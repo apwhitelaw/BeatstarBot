@@ -25,7 +25,7 @@ class PatternMatcher:
             rectangles.append([int(x), int(y), int(w), int(h)])
 
         rectangles, weights = cv2.groupRectangles(rectangles, 1, 0.2)
-        print(f"{len(rectangles)} found")
-        if len(rectangles) > 0: print(rectangles)
+        print(f"{len(rectangles)} notes found")
+        # if len(rectangles) > 0: print(rectangles)
 
         return rectangles

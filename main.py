@@ -24,9 +24,14 @@ class MainApp:
             screen_path = self.sg.get_screen(coords)
             rectangles = self.pm.match(screen_path, template)
 
-            # if len(rectangles) >= 1:
             if len(rectangles) >= 1:
                 self.press_keys(rectangles)
+
+            # TODO: Improve beatstar note match speed
+            # Beatstar note comes at the end of a set.
+            # If no note found, check for beatstar.
+            # Since Beatstar match runs after regular note, the tap
+            # is always a bit late (still within game's hit window).
             else:
                 rectangles = self.pm.match(screen_path, beatstar_template)
                 if len(rectangles) >= 1:
@@ -34,6 +39,9 @@ class MainApp:
 
         cv2.destroyAllWindows()
 
+    # TODO: Only press 2 keys when vertically aligned
+    # Sometimes when a note is followed closely by another note
+    # a double press occurs, and one is too early (causes song failure)
     def press_keys(self, rectangles):
         key_dict = {}
         for rect in rectangles:
@@ -43,7 +51,19 @@ class MainApp:
                 key_dict["s"] = True
             if rect[0] > 350:
                 key_dict["d"] = True
+        key_string = ""
+        for key in key_dict:
+            key_string += key
+
+        print(f"pressing {key_string}")
         pyautogui.hotkey(*key_dict)
+
+    # TODO: Implement hold notes
+    # Hold notes usually get detected as regular notes
+    # Func should keyDown() when hold note detected and
+    # then keyUp() when end of note detected.
+    def hold_key(self, rectangles):
+        pass
 
     # removes all screenshots
     def reset_app(self):
@@ -68,4 +88,3 @@ class MainApp:
 app = MainApp()
 app.main()
 #app.test_match("images/test_beatstar.png", "images/beatstar_text.png")
-#pyautogui.hotkey("alt", "prntscrn")
